@@ -26,7 +26,7 @@ def create_article(request):
             author_name = form.cleaned_data.get("authorName")
             author_email = form.cleaned_data.get("authorEmail")
             content = form.cleaned_data.get("content")
-            Article.objects.create(authorName=author_name, authorEmail=author_email, content=content)
+            Article.objects.create(authorName=author_name.capitalize(), authorEmail=author_email, content=content)
             return redirect("index")
         return render(request, "create.html", {"form": form})
 

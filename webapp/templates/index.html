@@ -2,20 +2,20 @@
 {% load static %}
 {% block nav %}
     <li class="nav-item">
-        <a class="nav-link" href="{% url "create_article" %}">Создание статьи</a>
+        <a class="nav-link" href="{% url "create_article" %}">Добавить новую запись</a>
     </li>
 {% endblock %}
 {% block content %}
     <br>
 
-    <h1>Search Article</h1>
+    <h1>Поиск</h1>
     <form action="" method="get">
         {% include "partial/form.html" with button_text=" Найти" %}
     </form>
 
     <hr>
 
-    <h1>Статьи</h1>
+    <h1>Записи</h1>
     <div class="row">
         {% for article in articles %}
             <div class="col-12 col-md-6 col-lg-4">
