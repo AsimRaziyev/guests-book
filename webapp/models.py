@@ -4,7 +4,7 @@ STATUS_CHOICES = [('active', 'Активно'), ('blocked', 'Заблокиро�
 
 class Article(models.Model):
     authorName = models.CharField(max_length=50, null=False, blank=False, verbose_name="имя автора")
-    authorEmail = models.CharField(max_length=50, verbose_name="email автора")
+    authorEmail = models.EmailField(max_length=50, verbose_name="email автора")
     content = models.TextField(max_length=3000, verbose_name="Текст")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="Дата изменения")

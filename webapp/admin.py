@@ -9,7 +9,7 @@ class ArticleAdmin(admin.ModelAdmin):
     list_display_links = ['authorName']
     list_filter = ['authorName', 'authorEmail']
     search_fields = ['authorName', 'authorEmail', 'content']
-    fields = ['authorName', 'authorEmail', 'content', 'created_at', 'updated_at']
+    fields = ['authorName', 'authorEmail', 'content', 'status', 'created_at', 'updated_at']
     readonly_fields = ['created_at', 'updated_at']
 
 
