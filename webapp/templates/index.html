@@ -6,6 +6,15 @@
     </li>
 {% endblock %}
 {% block content %}
+    <br>
+
+    <h1>Search Article</h1>
+    <form action="" method="get">
+        {% include "partial/form.html" with button_text=" Найти" %}
+    </form>
+
+    <hr>
+
     <h1>Статьи</h1>
     <div class="row">
         {% for article in articles %}
@@ -16,7 +25,7 @@
                             {{ article.authorName }}
                             ({{ article.authorEmail }})
                             <small>|</small>
-                            <small><a href="#"><i class="fa-solid fa-pen-to-square"></i></a></small>
+                            <small><a href="{% url "update_article" article.pk %}"><i class="fa-solid fa-pen-to-square"></i></a></small>
                             <small><a href="{% url "delete_article" article.pk %}"><i class="fa-solid fa-trash"></i></a></small>
                         </h5>
                         <p>{{ article.content }}</p>
